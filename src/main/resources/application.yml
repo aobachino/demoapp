@@ -25,7 +25,7 @@ spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://dbserver/demoapp_db
-    username: rootuser
+    username: root
     password: rootpassword
   jpa:
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
