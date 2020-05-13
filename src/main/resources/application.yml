@@ -1,0 +1,37 @@
+server:
+  port: 8080
+spring:
+  profiles:
+    active: localhost
+---
+spring:
+  profiles: localhost
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3314/demoapp_db
+    username: root
+    password: rootpassword
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  data:
+    web:
+      base-path: /customer
+---
+spring:
+  profiles: docker
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://dbserver/demoapp_db
+    username: rootuser
+    password: rootpassword
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  data:
+    web:
+      base-path: /customer
